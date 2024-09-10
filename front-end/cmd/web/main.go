@@ -41,6 +41,7 @@ func render(w http.ResponseWriter, t string) {
 	}
 
 	if err := tmpl.Execute(w, nil); err != nil {
+		fmt.Printf("error", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
